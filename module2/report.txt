@@ -1,0 +1,12 @@
+=== Grade Analysis Report ===
+Scores processed: 11
+Lines skipped: 1
+Average score: 77.55
+Highest score: 100
+Lowest score: 45
+Grade counts:
+  A (90-100) 3
+  B (80-89) 3
+  C (70-79) 2
+  D (60-69) 1
+  F (Below 60) 2
