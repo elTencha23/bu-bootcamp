@@ -4,3 +4,4 @@
 - Set up Java and VS Code
 - Learned the compile-run cycle
 - First Java program: Hello World 
+- Learned about arrays
