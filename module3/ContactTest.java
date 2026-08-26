@@ -55,4 +55,35 @@ public class ContactTest {
     Contact c = new Contact("Alan Turing", "555-0001");
     assertTrue(c.toString().contains("555-0001"));
   }
+
+  @Test
+  void contactsWithSameName_keepIndependentPhoneValues() {
+    Contact firstContact = new Contact("Ada Lovelace", "555-0001");
+    Contact secondContact = new Contact("Ada Lovelace", "555-0002");
+
+    assertNotSame(firstContact, secondContact);
+    assertEquals("Ada Lovelace", firstContact.getName());
+    assertEquals("Ada Lovelace", secondContact.getName());
+    assertEquals("555-0001", firstContact.getPhone());
+    assertEquals("555-0002", secondContact.getPhone());
+  }
+
+  @Test
+  void constructor_keepsNameAndPhoneInCorrectFields_whenValuesAreSwitched() {
+    Contact normalContact = new Contact("Ada Lovelace", "555-0001");
+    Contact switchedContact = new Contact("555-0001", "Ada Lovelace");
+
+    assertEquals("Ada Lovelace", normalContact.getName());
+    assertEquals("555-0001", normalContact.getPhone());
+    assertEquals("555-0001", switchedContact.getName());
+    assertEquals("Ada Lovelace", switchedContact.getPhone());
+  }
+
+  @Test
+  void constructor_allowsContactWithEmptyName() {
+    Contact contactWithoutName = new Contact("", "555-0003");
+
+    assertEquals("", contactWithoutName.getName());
+    assertEquals("555-0003", contactWithoutName.getPhone());
+  }
 } 
